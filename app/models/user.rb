@@ -32,10 +32,14 @@ class User < ActiveRecord::Base
   end
 
   def self.update_month
-    User.all.each do |user|
-      user.update(is_participating_this_month: false, is_assigned_peer_group: false)
-    end
     Peer.generate_groups
+    User.all.each do |user|
+      if user.is_participating_this_month
+        user.update(is_participating_this_month: false, is_assigned_peer_group: false, mentor_times: user.mentor_limit)
+      else
+        user.update(mentor_times: 0)
+      end
+    end
   end
 
   def check_industry
@@ -46,4 +50,13 @@ class User < ActiveRecord::Base
     end
   end
 
+  def mentor_times_change(new_mentor_limit)
+    mentor_diff = new_mentor_limit.to_i - self.mentor_limit
+    new_mentor_times = self.mentor_times + mentor_diff
+    if new_mentor_times < 0
+      return 0
+    else
+      return new_mentor_times
+    end
+  end
 end
