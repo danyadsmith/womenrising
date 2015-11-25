@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :mentors
   get 'users/:id/will_participate' => 'users#participate', as: :participate
   get 'users/:id/will_not_participate' => 'users#not_participate', as: :not_participate
+
+  get 'partners' => 'welcome#partners'
+  get 'how_it_works' => 'welcome#how_it_works'
+  get 'featured' => 'welcome#featured'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

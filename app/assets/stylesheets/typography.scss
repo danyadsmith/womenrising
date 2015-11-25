@@ -1,3 +1,22 @@
-body {
+@import "color.scss";
+@import "mixins.scss";
+
+* {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.splash-quote {
+  color: $white;
+  font-size: 64px;
+  font-weight: bold;
+  line-height:1.1em;
+  padding:0 50px;
+}
+
+section#whyJoin h1 {
+  @include section-header($white)
+}
+
+section#partners h1 {
+  @include section-header($raspberry)
 }

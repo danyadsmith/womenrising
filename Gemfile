@@ -43,6 +43,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro'
+gem 'font-awesome-rails', '~> 4.4'
 gem 'omniauth'
 gem 'omniauth-linkedin-oauth2'
 

@@ -1,11 +1,129 @@
+@import "color.scss";
+@import "mixins.scss";
+
 body {
-  background-color: #F4F4F4;
-  color: #000;
+  background-color: $white;
 }
 
+header {
+  @include one-edge-shadow;
+  background-color: $white;
+  height:90px;
+
+  .header_logo img {
+    height:60px;
+    margin:15px;
+  }
+
+  nav, ul {
+    height:90px;
+    font-size:1.1em;
+
+    li {
+  
+      height:40px;
+      margin:25px 0;
+      line-height:40px;
+
+      a {
+        color: $gray !important;
+        padding:0 15px !important;
+        font-weight:500;
+      }
+      a:hover {
+        color: $tangerine !important;
+      }
+    }
+
+  }
+
+  .nav > li > a:hover,
+  .nav > li > s a:focus {
+    background-color: transparent !important;
+  }
+
+  li#login_action {
+    font-size: 1.22em;
+    border-left: 1px solid #ccc;
+
+    a {
+      font-size:1.2em;
+      font-weight:900;
+      color: $aquamarine !important;
+    }
+    a:hover {
+      color: $aquamarine_bright !important;
+    }
+  }
+
+}
+
+footer {
+  background-color: $navy;
+  color: $white;
+  width: 100%;
+  font-size:1.3em;
+  font-weight:500;
+  line-height:2em;
+  padding:10px;
+  a {
+    margin:0 15px;
+    i.fa {
+      font-size:1.5em;
+    }
+  }
+  a:link,
+  a:visited {
+    color: $white !important;
+  }
+  a:active,
+  a:hover {
+    color: $aquamarine !important;
+  }
+
+}
+
+section#joinUs {
+    background-color: $navy;
+    background-image: url('splash_filtered.jpg');
+    background-size:cover;
+    background-position-y: -100px;
+    background-repeat: no-repeat;
+    padding:200px 0 0 0;
+    height:710px;
+    .btn-raspberry {
+      @include gradient-button($raspberry_light, $raspberry);
+    }
+}
+
+section#whyJoin {
+  background-color: $navy;
+  color: $white;
+  article {
+    background-color: $navy;
+    padding:0 100px 100px 100px;
+    img {
+      width:30%;
+      margin:0 35%;
+      text-align:center;
+    }
+  }
+}
+
+section#partners {
+  article{
+    text-align:center;
+    img {
+      height:75px;
+      margin:0 0 100px 0;
+    }
+  }
+}
+
+
 .context {
-  background-color: #1C4585;
-  color: #FFF;
+  background-color: $navy;
+  color: $white;
   margin: 0 auto;
   margin-bottom: 60px;
   width: 60%;
@@ -15,11 +133,11 @@ body {
 }
 
 .context a {
-  color: #F2CB15;
+  color: $tangerine;
 }
 
 .subject {
-  color: #F2CB15;
+  color: $tangerine;
   margin-left: 150px;
 }
 
@@ -28,15 +146,11 @@ body {
  /*header*/
 
  .btn-default {
-  margin: 0 auto;
-  background-color: #F2CB15;
-  width: 25%;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  background-color: $raspberry;
  }
 
  .btn-default:hover {
-  background-color: #F2CB15;
+  background-color: $tangerine;
  }
 
  .btn-default a {
@@ -61,7 +175,7 @@ body {
 }
 
 .title p {
-  color: #F2CB15;
+  color: $tangerine;
   font-size: 1.3em;
 }
 
@@ -69,21 +183,10 @@ body {
   padding-bottom: 40px;
 }
 
-.nav {
-  padding-right: 20px;
-}
 
-.nav>li>a{
-  color: #FFF;
-  font-size: 110%;
-}
-
-.nav>li>a:hover{
-  background-color:#000;
-}
 
 .text-muted {
-  color: #FFF;
+  color: $white;
 }
 
 .text-muted:hover {
@@ -99,8 +202,8 @@ body {
 .second-footer {
   text-align: center;
   padding-top: 20px;
-  background-color: #1C4585;
-  color: #FFF;
+  background-color: $navy;
+  color: $white;
 }
 
 .second-footer h1 {
@@ -138,7 +241,7 @@ body {
 /*user show*/
 
 .waitlist {
-  color: #1C4585;
+  color: $navy;
   width: 50%;
   margin: 0 auto;
 }
@@ -155,7 +258,7 @@ body {
 .blog-sidebar {
   display: inline-block;
   vertical-align: top;
-  background-color: #FFF;
+  background-color: $white;
   margin-right: 5px;
   margin-top: 50px;
   width: 20%;
@@ -165,7 +268,7 @@ body {
 }
 
 .blog-sidebar a {
-  color: #1C4585;
+  color: $navy;
   padding: 5px;
 }
 
@@ -215,8 +318,8 @@ input,select {
   text-align: center;
   width: 50%;
   margin: 0 auto;
-  background-color: #1C4585;
-  color: #FFF;
+  background-color: $navy;
+  color: $white;
   padding: 40px;
   border-radius: 10px;
   font-size: 1.3em;
@@ -234,26 +337,4 @@ input,select {
 
 .mentor li {
   list-style-type: none;
-}
-
-/*footer*/
-
-
-footer {
-  background-color: #555;
-  color: #FFF;
-  text-align: center;
-  width: 100%;
-  padding: 30px;
-}
-
-footer h5 a:hover {
-  color: #add8e6;
-}
-
-footer h5 a {
-  color: #FFF;
-}
-footer p {
-  margin-bottom: 0px; 
 }

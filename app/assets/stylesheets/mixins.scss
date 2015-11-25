@@ -1,0 +1,29 @@
+@import "color.scss";
+
+@mixin one-edge-shadow {
+  -webkit-box-shadow: 0 7px 7px -6px $gray;
+     -moz-box-shadow: 0 7px 7px -6px $gray;
+          box-shadow: 0 7px 7px -6px $gray;
+}
+
+@mixin gradient-button($light-color, $dark-color) {
+  background-image: linear-gradient(-180deg, $light-color 0%, $dark-color 100%);
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.50), inset 0px 1px 8px 0px $dark-color;
+  border-radius: 5px;
+  border-color: $dark-color;
+  color: $white;
+  font-size:1.25em;
+  font-weight:700;
+  padding:15px 50px;
+  margin:20px 0;
+}
+
+@mixin section-header($color) {
+  font-size:69px;
+  line-height:84px;
+  font-weight:200;
+  letter-spacing:.6px;  
+  color: $color;
+  margin:0;
+  padding:100px 0;
+}
